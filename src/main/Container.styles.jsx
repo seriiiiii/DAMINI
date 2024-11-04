@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-<<<<<<< HEAD
 const ContainerWrapper = styled.div`
   margin-left: ${({ isOpen }) => (isOpen ? "0px" : "0px")};
       width: 100%;
@@ -61,20 +60,3 @@ const MainTable = styled.div`
 `;
 
 export { ContainerWrapper, Section01, Section02, Section02Header, SearchWrapper, Section03, MainTable };
-=======
-export const NaviLogContainer = styled.div`
-  width: 100%;
-  flex-grow: 1;
-  background: #f9f8ff;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  overflow: hidden;
-  transition:
-    margin-left 0.35s ease-in-out,
-    left 0.35s ease-in-out,
-    margin-right 0.35s ease-in-out,
-    right 0.35s ease-in-out;
-  padding: 20px;
-`;
->>>>>>> 839baac6355aeffd545a020164c6e831c6fc3367

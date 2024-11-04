@@ -45,6 +45,135 @@ const HeaderItem = styled.div`
     align-items: center;
     flex-basis: auto;
 `
+const Nav = styled.nav`
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 265px;
+  margin: 0;
+  z-index: 20;
+  transition: width 0.3s ease, all 0.2s ease-in;
+  opacity: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  &.open {
+    width: 265px;
+  }
+  &.closed {
+    width: 70px;
+  }
+`;
+
+const NavContainer = styled.div`
+  width: inherit;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  transition: all 0.2s ease 0s;
+  position: relative;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+`;
+
+const NavList = styled.ul`
+     display: grid;
+    cursor: pointer;
+`;
+
+const NavItem = styled.li`
+
+  ul{
+    display:grid;
+    gap:8px;
+    padding:7px 0px 0px 25px;
+    li div:first-child{
+       display: flex;
+    align-items: center;}
+  }
+`;
+
+const NavLink = styled(Link)`
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  gap: 10px;
+`;
+
+
+const SubMenu = styled.div`
+  max-height: ${({ isOpen }) => (isOpen ? "200px" : "0")};
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
+  display: grid;
+  gap: 4px;
+  padding-left: 8px;
+  margin-top: 8px;
+  color: #6c7383;
+`;
+
+const Icon = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const HamburgerButton = styled.button`
+
+`;
+
+const ArrowIcon = styled(Icon)`
+  margin-left: auto;
+`;
+const Navitemtext = styled.div`
+  display: inline;
+    color: #3617CE;
+    `
+const NavFold = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+ ul li{
+  padding: 15px 28px;
+  }
+  .NavIcon{
+   display: grid;
+    place-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto;
+    margin-bottom: 31px;}
+`;
+const NavIcon = styled.div`
+ 
+`;
+const NavOpen = styled.div`
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  .HamburgerButton{
+    margin-left:50px;
+  }
+      & .NavIcon{
+      display: flex;
+   justify-content: center; 
+    align-items: center;
+    gap: 10px;
+    }
+`;
+
+const NavProfileIcon = styled(Icon)`
+ 
+`;
 
 const Profile = styled.div`
     width: 30px;
@@ -114,4 +243,4 @@ const StyledLink = styled(Link)`
 `;
 
 
-  export {MainContainer,HeaderWrapper, HeaderbarCollapse, HeaderItem, Profile, PagenationWrapper, CustomSelect, PageInputArea, StyledLink};
+  export {MainContainer,HeaderWrapper, HeaderbarCollapse, HeaderItem, Profile, PagenationWrapper, CustomSelect, PageInputArea, StyledLink, Nav, NavIcon,  NavContainer, NavList, Navitemtext, NavItem, NavLink, SubMenu, Icon, HamburgerButton, ArrowIcon, NavFold, NavOpen, NavProfileIcon};

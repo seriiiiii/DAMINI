@@ -55,7 +55,7 @@
 } */
 
 /*nav*/
-nav {
+/* nav {
     position: relative;
     top: 0;
     left: 0;
@@ -90,7 +90,6 @@ nav .nav_container {
 
 nav .nav_container ul {
     display: block;
-    /* margin: 0 auto; */
     padding: 8px 0px;
     cursor: pointer;
 }
@@ -121,10 +120,6 @@ nav .nav_container .nav_link {
     gap: 10px;
 }
 
-/* nav .nav_item ul li div {
-    display: flex;
-    align-items: center;
-} */
 nav .nav_item ul li div:nth-child(1) {
     display: flex;
     align-items: center;
@@ -205,7 +200,7 @@ nav .nav_container ul li>div .arrowup {
 
 .closed .nav_open {
     display: none;
-}
+} */
 
 /*nav-end*/
 

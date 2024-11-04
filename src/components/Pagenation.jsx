@@ -13,17 +13,11 @@ import {
 
 function Pagenation() {
   return (
-<<<<<<< HEAD
     <PagenationWrapper>
         <li>
             총 20건
         </li>
       <PageInputArea>
-=======
-    <ul className="pagenation">
-      <li>총 20건</li>
-      <li className="page_input_area">
->>>>>>> 839baac6355aeffd545a020164c6e831c6fc3367
         <span>Rows per page:</span>
         <CustomSelect data-trigger="">
           <option value="1" selected>
