@@ -2,7 +2,10 @@ import React,{useState} from 'react';
 import '../assets/css/styles.css';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
-import Container from '../main/Container';
+import Container from './Container';
+import {
+MainContainer
+} from "../components/common.styles";
 
 function Main(){
     const [isOpen, setIsOpen] = useState(false); 
@@ -13,10 +16,10 @@ function Main(){
     return(
         <div>
         <Header />
-        <main>
+        <MainContainer>
           <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
           <Container isOpen={isOpen}  />
-        </main>
+        </MainContainer> 
       </div>
     );
 };

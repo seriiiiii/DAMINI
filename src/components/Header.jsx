@@ -1,21 +1,28 @@
 import React from 'react';
 import styled from "styled-components";
 import { ReactComponent as AlarmIcon } from '../assets/images/alram-icon.svg';
+import {
+    HeaderWrapper,
+    HeaderbarCollapse,
+    HeaderItem,
+    Profile,
+  } from "./common.styles";
+  
 
 function Header(){
     return (
-        <header className='header'>
-            <div className='headerbar-collaps'>
+        <HeaderWrapper>
+            <HeaderbarCollapse>
                 <h1>DAMINI</h1>
-                <div className='header-item'>
-                    <div className='profile'></div>
+                <HeaderItem>
+                    <Profile></Profile>
                     <span>ID(사용자명)</span>
                       <Icon> 
                          <AlarmIcon />
                      </Icon>    
-                </div>
-            </div>
-        </header>
+                </HeaderItem>
+            </HeaderbarCollapse>
+        </HeaderWrapper>
     );
 }
 const Icon = styled.div``

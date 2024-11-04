@@ -1,18 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { StyledLink } from './common.styles'; 
 import { ReactComponent as ChevronLeft } from "../assets/images/chevron-left.svg";
 import { ReactComponent as ChevronRight } from "../assets/images/chevron-right.svg";
 import { ReactComponent as ArrowDownpagenation } from "../assets/images/arrow-down_pagenation.svg";
+import {
+ PagenationWrapper,
+ PageInputArea,
+ CustomSelect,
+} from "./common.styles";
 
 function Pagenation() {
   return (
-    <ul className="pagenation">
+    <PagenationWrapper>
         <li>
             총 20건
         </li>
-      <li className="page_input_area">
+      <PageInputArea>
         <span>Rows per page:</span>
-        <select className="page_select" data-trigger="">
+        <CustomSelect data-trigger="">
           <option value="1" selected>
             5
           </option>
@@ -26,20 +33,20 @@ function Pagenation() {
           <option value="9">9</option>
           <option value="10">10</option>
           <ArrowDownpagenation />
-        </select>
-        <span className="total_page">1-5 of 13</span>
-      </li>
-      <li className="page_item">
-        <Link className="page_link disabled" to="">
+        </CustomSelect>
+        <span>1-5 of 13</span>
+      </PageInputArea>
+      <li>
+        <styledLink disabled to="">
           <ChevronLeft />
-        </Link>
+        </styledLink>
       </li>
-      <li class="page_item">
-        <Link className="page_link" to="">
+      <li>
+        <styledLink to="">
           <ChevronRight />
-        </Link>
+        </styledLink>
       </li>
-    </ul>
+    </PagenationWrapper>
   );
 }
 

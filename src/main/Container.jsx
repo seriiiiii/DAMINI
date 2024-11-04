@@ -5,6 +5,15 @@ import Select from "../components/Select";
 import { ReactComponent as Search } from "../assets/images/search.svg";
 import Table from "../components/Table";
 import Pagenation from "../components/Pagenation";
+import {
+  ContainerWrapper,
+  Section01,
+  Section02,
+  Section02Header,
+  SearchWrapper,
+  Section03,
+  MainTable,
+} from "./Container.styles";
 
 function Container({ isOpen }) {
   const [changeOptionEl, setChangeOptionEl] = useState("");
@@ -69,15 +78,15 @@ const tableData = [
 
 
   return (
-    <div className="container" style={{ marginLeft: isOpen ? "0px" : "0px" }}>
-      <div className="section01">
+    <ContainerWrapper>
+      <Section01>
         <h2>Navilog 3.0 UI Component 등록 현황 조회</h2>
         <Button onClick={handleClick} primary size="small">
           Page 추가 신청
         </Button>
-      </div>
-      <div className="section02">
-        <div className="section02_header">
+      </Section01>
+      <Section02>
+        <Section02Header>
           <div>
             <label>Service</label>
             <Select
@@ -111,23 +120,23 @@ const tableData = [
               onChange={(e) => setChangeOptionEl(e)}
             />
           </div>
-          <div className="search">
+          <SearchWrapper>
             <Input
               placeholder="검색어를 입력하세요"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
             />
             <Search />
-          </div>
-        </div>
-      </div>
-      <div className="section03">
-        <div className="main_table">
+          </SearchWrapper>
+        </Section02Header>
+      </Section02>
+      <Section03>
+        <MainTable>
          <Table headers={tableHeaders} data={tableData}/>
           <Pagenation />
-        </div>
-      </div>
-    </div>
+        </MainTable>
+      </Section03>
+    </ContainerWrapper>
   );
 }
 

@@ -1,5 +1,5 @@
 /*header*/
-.header {
+/* .header {
     width: 100%;
     position: fixed;
     z-index: 99;
@@ -11,7 +11,6 @@
     padding: var(--none, 0px) 20px;
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
-
 }
 
 .headerbar-collaps {
@@ -44,16 +43,16 @@
     height: 30px;
     border-radius: 50px;
     background-color: #3617CE;
-}
+} */
 
 /*heaader=end*/
-main {
+/* main {
     align-items: stretch;
     display: flex;
     width: 100%;
     height: 100vh;
     padding-top: 70px;
-}
+} */
 
 /*nav*/
 nav {
@@ -211,49 +210,6 @@ nav .nav_container ul li>div .arrowup {
 /*nav-end*/
 
 /*container*/
-.container {
-    width: 100%;
-    flex-grow: 1;
-    background: #F9F8FF;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    overflow: hidden;
-    transition: margin-left 0.35s ease-in-out, left 0.35s ease-in-out, margin-right 0.35s ease-in-out, right 0.35s ease-in-out;
-    padding: 20px;
-}
-
-.section01 {
-    width: 100%;
-    border-bottom: 1px solid #CDCBD7;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0px 0px 16px 0px;
-    margin-bottom: 20px;
-}
-
-.section01 h2 {
-    font-size: 24px;
-}
-
-.section02_header {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-}
-
-.section02_header label {
-    margin-right: 8px;
-}
-
-.search {
-    align-items: center;
-    display: flex;
-    gap: 11.38px;
-}
-
 
 /*loading*/
 .load {
@@ -367,7 +323,7 @@ table tbody tr:hover {
 }
 
 /*pagenation*/
-.pagenation {
+/* .pagenation {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -428,4 +384,4 @@ table tbody tr:hover {
 .pagenation .page_input_area .page_select:focus {
     border: none;
     border: none;
-}
+} */
