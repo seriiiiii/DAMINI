@@ -58,7 +58,9 @@ const StyledButton = styled.button`
   border-radius: 5px;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   text-align: center;
-  transition: opacity 0.3s ease, background-color 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    background-color 0.3s ease;
 
   ${({ size }) => sizeStyles[size] || sizeStyles.medium}
 
