@@ -1,9 +1,73 @@
 body {
-  font-family: 'AppleSDGothicNeo', sans-serif; 
+  font-family: 'AppleSDGothicNeo', sans-serif;
   font-weight: 500;
-  margin: 0; 
-  padding: 0; 
+  margin: 0;
+  padding: 0;
   color: #333;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: 560;
+  font-size: 14px;
+  color: inherit;
+}
+
+canvas,
+img,
+picture,
+svg,
+video {
+  height: auto;
+  display: block;
+  /* max-width: 100%; */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+li,
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* code {
@@ -13,34 +77,39 @@ body {
 @font-face {
   font-family: 'AppleSDGothicNeo';
   src: url('./assets/fonts/AppleSDGothicNeoEB.ttf') format('truetype');
-  font-weight: 700; /* Extra Bold */
+  font-weight: 700;
+  /* Extra Bold */
   font-style: normal;
 }
 
 @font-face {
   font-family: 'AppleSDGothicNeo';
   src: url('./assets/fonts/AppleSDGothicNeoB.ttf') format('truetype');
-  font-weight: 600; /* Bold */
+  font-weight: 600;
+  /* Bold */
   font-style: normal;
 }
 
 @font-face {
   font-family: 'AppleSDGothicNeo';
   src: url('./assets/fonts/AppleSDGothicNeoM.ttf') format('truetype');
-  font-weight: 500; /* Medium */
+  font-weight: 500;
+  /* Medium */
   font-style: normal;
 }
 
 @font-face {
   font-family: 'AppleSDGothicNeo';
   src: url('./assets/fonts/AppleSDGothicNeoL.ttf') format('truetype');
-  font-weight: 400; /* Light */
+  font-weight: 400;
+  /* Light */
   font-style: normal;
 }
 
 @font-face {
   font-family: 'AppleSDGothicNeo';
   src: url('./assets/fonts/AppleSDGothicNeoH.ttf') format('truetype');
-  font-weight: 300; /* Regular */
+  font-weight: 300;
+  /* Regular */
   font-style: normal;
 }

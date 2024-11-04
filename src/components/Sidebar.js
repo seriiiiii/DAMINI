@@ -13,7 +13,7 @@ import { ReactComponent as Dashboard } from "../assets/images/dashboard.svg";
 
 function Sidebar({ isOpen, toggleSidebar }) {
   const [openSubMenus, setOpenSubMenus] = useState({});
-  const [activeId, setActiveId] = useState(null);
+  // const [activeId, setActiveId] = useState(null);
 
   const handleSubMenuToggle = (menu) => {
     setOpenSubMenus((prev) => ({
@@ -25,46 +25,41 @@ function Sidebar({ isOpen, toggleSidebar }) {
     color: inherit;
     text-decoration: none;
   `;
-  const values = [
-    { id: 1, text: "LI-1" },
-    { id: 2, text: "Navilog Dictionary" },
-    { id: 3, text: "My Page" },
-    { id: 4, text: "Admin" },
-  ];
-  const handleClick = (id) => {
-    setActiveId(id);
-  };
+  // const values = [
+  //   { id: 1, text: "LI-1" },
+  //   { id: 2, text: "Navilog Dictionary" },
+  //   { id: 3, text: "My Page" },
+  //   { id: 4, text: "Admin" },
+  // ];
+  // const handleClick = (id) => {
+  //   setActiveId(id);
+  // };
 
   return (
     <nav className={`nav ${isOpen ? "open" : "closed"}`}>
       <div className="nav_container">
         <div className="nav_fold">
           <ul className="nav_fold_list">
-            {values.map((val) => (
-              <li
-                key={val.id}
-                onClick={() => setActiveId(val.id)}
-                style={{
-                  backgroundColor: activeId === val.id ? "#4B49AC" : "white",
-                  cursor: "pointer",
-                  stroke: "#fff",
-                  listStyleType: "none",
-                  color: activeId === val.id ? "white" : "black",
-                }}
-              >
-                <Icon>
-                  {val.id === 1 ? (
-                    <Dashboard />
-                  ) : val.id === 2 ? (
-                    <NavilogDictionary />
-                  ) : val.id === 3 ? (
-                    <Permidentity />
-                  ) : (
-                    <Admin />
-                  )}
-                </Icon>
-              </li>
-            ))}
+            <li>
+              <Icon>
+                <Dashboard />
+              </Icon>
+            </li>
+            <li>
+              <Icon>
+                <NavilogDictionary />
+              </Icon>
+            </li>
+            <li>
+              <Icon>
+                <Permidentity />
+              </Icon>
+            </li>
+            <li>
+              <Icon>
+                <Admin />
+              </Icon>
+            </li>
           </ul>
           <div className="nav-icon">
             <Icon className="nav-profile">
@@ -98,34 +93,31 @@ function Sidebar({ isOpen, toggleSidebar }) {
                 <div className="nav_item_text">Navilog Dictionary</div>
               </StyledLink>
               <ul>
-                <li onClick={() => handleSubMenuToggle("navilog2")}>
-                  <div>
+                <li>
+                  <div onClick={() => handleSubMenuToggle("navilog")}>
                     <div>Navilog 3.0 규격</div>
-                    <Icon className="arrowup">
-                      {openSubMenus["navilog2"] ? <Arrowup /> : <Arrowdown />}
-                    </Icon>
-                  </div>
-                  {openSubMenus["navilog2"] && (
-                    <ul>
-                      <li>송출 데이터 규격</li>
-                      <li>적재 데이터 규격</li>
-                      <li>Component 등록 현황</li>
-                    </ul>
-                  )}
-                </li>
-                <li onClick={() => handleSubMenuToggle("navilog")}>
-                  <div>
-                    <div>표준 정책 가이드</div>
                     <Icon className="arrowup">
                       {openSubMenus["navilog"] ? <Arrowup /> : <Arrowdown />}
                     </Icon>
                   </div>
-                  {openSubMenus["navilog"] && (
-                    <ul>
-                      <li>개발 표준 정책</li>
-                      <li className="active">Component 작성 정책</li>
-                    </ul>
-                  )}
+                  <SubMenu isOpen={openSubMenus["navilog"]}>
+                    <li>송출 데이터 규격</li>
+                    <li>적재 데이터 규격</li>
+                    <li>Component 등록 현황</li>
+                  </SubMenu>
+                </li>
+                <li>
+                  <div onClick={() => handleSubMenuToggle("navilog2")}>
+                    <div>표준 정책 가이드</div>
+                    <Icon className="arrowup">
+                      {openSubMenus["navilog2"] ? <Arrowup /> : <Arrowdown />}
+                    </Icon>
+                  </div>
+
+                  <SubMenu isOpen={openSubMenus["navilog2"]}>
+                    <li>개발 표준 정책</li>
+                    <li>Component 작성 정책</li>
+                  </SubMenu>
                 </li>
               </ul>
             </li>
@@ -173,12 +165,18 @@ function Sidebar({ isOpen, toggleSidebar }) {
     </nav>
   );
 }
+
 const SubMenu = styled.div`
   max-height: ${({ isOpen }) => (isOpen ? "200px" : "0")};
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
+  display: grid;
+  gap: 4px;
+  padding-left: 8px;
+  margin-top: 10px;
+  color: #6C7383;
 `;
-
 const Icon = styled.div``;
 
 export default Sidebar;
