@@ -7,9 +7,7 @@ import { ReactComponent as ArrowDownpagenation } from "../assets/images/arrow-do
 function Pagenation() {
   return (
     <ul className="pagenation">
-        <li>
-            총 20건
-        </li>
+      <li>총 20건</li>
       <li className="page_input_area">
         <span>Rows per page:</span>
         <select className="page_select" data-trigger="">
