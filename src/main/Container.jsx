@@ -5,6 +5,7 @@ import Select from "../components/Select";
 import { ReactComponent as Search } from "../assets/images/search.svg";
 import Table from "../components/Table";
 import Pagenation from "../components/Pagenation";
+import { NaviLogContainer } from "./Container.styles";
 
 function Container({ isOpen }) {
   const [changeOptionEl, setChangeOptionEl] = useState("");
@@ -19,57 +20,56 @@ function Container({ isOpen }) {
   }, [changeOptionEl]);
 
   const tableHeaders = [
-    'Service',
-    'UI Version',
-    'Page',
-    'Component',
-    '담당자',
-    'Status',
-    'RequesT Type',
-];
+    "Service",
+    "UI Version",
+    "Page",
+    "Component",
+    "담당자",
+    "Status",
+    "RequesT Type",
+  ];
 
-const tableData = [
+  const tableData = [
     {
-        requestType: 'Page',
-        title: '서비스별 이용자 추이',
-        applicationDate: '2023.07.26 09:00:01',
-        processDate: '-',
-        handler: '-',
-        status: '신청완료',
-        requestTypeDetail: '신규',
+      requestType: "Page",
+      title: "서비스별 이용자 추이",
+      applicationDate: "2023.07.26 09:00:01",
+      processDate: "-",
+      handler: "-",
+      status: "신청완료",
+      requestTypeDetail: "신규",
     },
     {
-        requestType: 'Page',
-        title: '다른 서비스 이용자 추이',
-        applicationDate: '2023.08.01 10:30:15',
-        processDate: '-',
-        handler: '-',
-        status: '처리중',
-        requestTypeDetail: '수정',
+      requestType: "Page",
+      title: "다른 서비스 이용자 추이",
+      applicationDate: "2023.08.01 10:30:15",
+      processDate: "-",
+      handler: "-",
+      status: "처리중",
+      requestTypeDetail: "수정",
     },
     {
-      requestType: 'Page',
-      title: '다른 서비스 이용자 추이',
-      applicationDate: '2023.08.01 10:30:15',
-      processDate: '-',
-      handler: '-',
-      status: '처리중',
-      requestTypeDetail: '수정',
-  },
-  {
-    requestType: 'Page',
-    title: '다른 서비스 이용자 추이',
-    applicationDate: '2023.08.01 10:30:15',
-    processDate: '-',
-    handler: '-',
-    status: '처리중',
-    requestTypeDetail: '수정',
-}, 
-];
-
+      requestType: "Page",
+      title: "다른 서비스 이용자 추이",
+      applicationDate: "2023.08.01 10:30:15",
+      processDate: "-",
+      handler: "-",
+      status: "처리중",
+      requestTypeDetail: "수정",
+    },
+    {
+      requestType: "Page",
+      title: "다른 서비스 이용자 추이",
+      applicationDate: "2023.08.01 10:30:15",
+      processDate: "-",
+      handler: "-",
+      status: "처리중",
+      requestTypeDetail: "수정",
+    },
+  ];
 
   return (
-    <div className="container" style={{ marginLeft: isOpen ? "0px" : "0px" }}>
+    <NaviLogContainer style={{ marginLeft: isOpen ? "0px" : "0px" }}>
       <div className="section01">
         <h2>Navilog 3.0 UI Component 등록 현황 조회</h2>
         <Button onClick={handleClick} primary size="small">
@@ -123,11 +123,11 @@ const tableData = [
       </div>
       <div className="section03">
         <div className="main_table">
-         <Table headers={tableHeaders} data={tableData}/>
+          <Table headers={tableHeaders} data={tableData} />
           <Pagenation />
         </div>
       </div>
-    </div>
+    </NaviLogContainer>
   );
 }
 

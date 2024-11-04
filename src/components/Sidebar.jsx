@@ -169,13 +169,15 @@ function Sidebar({ isOpen, toggleSidebar }) {
 const SubMenu = styled.div`
   max-height: ${({ isOpen }) => (isOpen ? "200px" : "0")};
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   display: grid;
   gap: 4px;
   padding-left: 8px;
   margin-top: 10px;
-  color: #6C7383;
+  color: #6c7383;
 `;
 const Icon = styled.div``;
 
