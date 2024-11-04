@@ -376,7 +376,10 @@ table tbody tr:hover {
     padding: 13px 12px;
     gap: 20px;
 }
-
+.pagenation li:nth-child(1){
+    margin-right: auto;
+    margin-left: 26px;
+}
 .pagenation .page_link {
     display: flex;
     align-items: center;
@@ -387,10 +390,6 @@ table tbody tr:hover {
     background: none;
     border: none;
     color: #6C7383;
-}
-
-.pagenation .page_link:hover {
-    background-color: #f5f5f5;
 }
 
 .pagenation .page_link.disabled {
