@@ -13,7 +13,8 @@ import {
   NavOpen,
   NavProfileIcon,
   Navitemtext,
-  NavIcon
+  NavIcon,
+  StyledLi
 } from "./common.styles"; 
 import { ReactComponent as NavProfile } from "../assets/images/navProfile.svg";
 import { ReactComponent as Admin } from "../assets/images/admin.svg";
@@ -27,7 +28,10 @@ import { ReactComponent as Dashboard } from "../assets/images/dashboard.svg";
 
 function Sidebar({ isOpen, toggleSidebar }) {
   const [openSubMenus, setOpenSubMenus] = useState({});
-
+  const [activeIndex, setActiveIndex] = useState(null);
+  const handleClick = (index) => {
+    setActiveIndex(index); 
+  };
   const handleSubMenuToggle = (menu) => {
     setOpenSubMenus((prev) => ({
       ...prev,
@@ -35,12 +39,14 @@ function Sidebar({ isOpen, toggleSidebar }) {
     }));
   };
 
+  
+
   return (
     <Nav className={isOpen ? "open" : "closed"}>
       <NavContainer>
         {!isOpen &&  (
         <NavFold>
-          <NavList>
+          <NavList className="navlist">
             <NavItem>
               <Icon>
                 <Dashboard />
@@ -103,9 +109,14 @@ function Sidebar({ isOpen, toggleSidebar }) {
                     </ArrowIcon>
                   </div>
                   <SubMenu isOpen={openSubMenus["navilog"]}>
-                    <li>송출 데이터 규격</li>
-                    <li>적재 데이터 규격</li>
-                    <li>Component 등록 현황</li>
+                      <StyledLi
+        isActive={activeIndex === 0}
+        onClick={() => handleClick(0)} 
+      >송출 데이터 규격</StyledLi>
+                    <StyledLi isActive={activeIndex === 1}
+        onClick={() => handleClick(1)} >적재 데이터 규격</StyledLi>
+                    <StyledLi   isActive={activeIndex === 2}
+        onClick={() => handleClick(2)} >Component 등록 현황</StyledLi>
                   </SubMenu>
                 </li>
                 <li>
@@ -116,8 +127,11 @@ function Sidebar({ isOpen, toggleSidebar }) {
                     </ArrowIcon>
                   </div>
                   <SubMenu isOpen={openSubMenus["navilog2"]}>
-                    <li>개발 표준 정책</li>
-                    <li>Component 작성 정책</li>
+                    <StyledLi isActive={activeIndex === 4}
+                          onClick={() => handleClick(4)}>개발 
+                          표준 정책</StyledLi>
+                    <StyledLi isActive={activeIndex === 5}
+        onClick={() => handleClick(5)}>Component 작성 정책</StyledLi>
                   </SubMenu>
                 </li>
               </ul>

@@ -4,6 +4,7 @@ import Input from "../components/Input";
 import Select from "../components/Select";
 import { ReactComponent as Search } from "../assets/images/search.svg";
 import Table from "../components/Table";
+import DropdownTable from "../components/DropdownTable";
 import Pagenation from "../components/Pagenation";
 import {
   ContainerWrapper,
@@ -23,8 +24,8 @@ function Container({ isOpen }) {
   const handleClick = () => {};
 
   useEffect(() => {
-    if (changeOptionEl && changeOptionEl.target)
-      console.log(changeOptionEl.target.value);
+    if (changeOptionEl && changeOptionEl.target);
+    // console.log(changeOptionEl.target.value);
   }, [changeOptionEl]);
 
   const tableHeaders = [
@@ -55,6 +56,26 @@ function Container({ isOpen }) {
       handler: "-",
       status: "처리중",
       requestTypeDetail: "수정",
+      dropDownData: [
+        {
+          requestType: "Page",
+          title: "다른 서비스 이용자 추이",
+          applicationDate: "2023.08.01 10:30:15",
+          processDate: "-",
+          handler: "-",
+          status: "sdfsdfsdf",
+          requestTypeDetail: "//",
+        },
+        {
+          requestType: "Page2",
+          title: "다른 서비스 이용자 추이",
+          applicationDate: "2023.08.01 10:30:15",
+          processDate: "-",
+          handler: "-",
+          status: "sdfsdfsdf",
+          requestTypeDetail: "//",
+        },
+      ],
     },
     {
       requestType: "Page",
@@ -64,6 +85,17 @@ function Container({ isOpen }) {
       handler: "-",
       status: "처리중",
       requestTypeDetail: "수정",
+      dropDownData: [
+        {
+          requestType: "Page",
+          title: "다른 서비스 이용자 추이",
+          applicationDate: "2023.08.01 10:30:15",
+          processDate: "-",
+          handler: "-",
+          status: "sdfsdfsdf",
+          requestTypeDetail: "//",
+        },
+      ],
     },
     {
       requestType: "Page",
@@ -73,6 +105,17 @@ function Container({ isOpen }) {
       handler: "-",
       status: "처리중",
       requestTypeDetail: "수정",
+      dropDownData: [
+        {
+          requestType: "Page",
+          title: "다른 서비스 이용자 추이",
+          applicationDate: "2023.08.01 10:30:15",
+          processDate: "-",
+          handler: "-",
+          status: "sdfsdfsdf",
+          requestTypeDetail: "//",
+        },
+      ],
     },
   ];
 
@@ -98,7 +141,7 @@ function Container({ isOpen }) {
             />
           </div>
           <div>
-            <label>UI Version</label>
+            <label>UI&nbsp;Version</label>
             <Select
               options={[
                 { label: "All", value: "" },
@@ -131,7 +174,8 @@ function Container({ isOpen }) {
       </Section02>
       <Section03>
         <MainTable>
-         <Table headers={tableHeaders} data={tableData}/>
+          {/* <Table headers={tableHeaders} data={tableData}/> */}
+          <DropdownTable headers={tableHeaders} data={tableData} />
           <Pagenation />
         </MainTable>
       </Section03>

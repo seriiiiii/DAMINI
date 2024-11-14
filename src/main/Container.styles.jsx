@@ -35,7 +35,12 @@ const Section02Header = styled.div`
  display: flex;
     gap: 16px;
     align-items: center;
-
+    div{
+    display: flex;
+    flex:1;
+    width: 100%;
+    align-items: center;
+    }
     label{
      margin-right: 8px;
     }

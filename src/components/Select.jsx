@@ -16,7 +16,10 @@ const StyledSelect = styled.select`
   color: #333;
   transition: border-color 0.3s;
   border-bottom: 2px solid #3617ce;
-
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    width: 100%;
   &:focus {
   }
   &:disabled {

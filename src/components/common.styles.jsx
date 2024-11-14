@@ -85,6 +85,7 @@ const NavContainer = styled.div`
 const NavList = styled.ul`
      display: grid;
     cursor: pointer;
+    gap:28px;
 `;
 
 const NavItem = styled.li`
@@ -117,6 +118,15 @@ const SubMenu = styled.div`
   padding-left: 8px;
   margin-top: 8px;
   color: #6c7383;
+
+`;
+const StyledLi = styled.li`
+  padding: 8px;
+  cursor: pointer;
+  background-color: ${({ isActive }) => (isActive ? "#4B49AC" : "transparent")};
+  color: ${({ isActive }) => (isActive ? "#fff" : "#6c7383")};
+  padding: ${({ isActive }) => (isActive ? "3px 10px" : "0 0")};
+  border-radius: ${({ isActive }) => (isActive ? "5px" : "0")};
 `;
 
 const Icon = styled.div`
@@ -150,6 +160,8 @@ const NavFold = styled.div`
     gap: 10px;
     margin-top: auto;
     margin-bottom: 31px;}
+    .navlist{
+    gap:0;}
 `;
 const NavIcon = styled.div`
  
@@ -243,4 +255,4 @@ const StyledLink = styled(Link)`
 `;
 
 
-  export {MainContainer,HeaderWrapper, HeaderbarCollapse, HeaderItem, Profile, PagenationWrapper, CustomSelect, PageInputArea, StyledLink, Nav, NavIcon,  NavContainer, NavList, Navitemtext, NavItem, NavLink, SubMenu, Icon, HamburgerButton, ArrowIcon, NavFold, NavOpen, NavProfileIcon};
+  export {MainContainer,HeaderWrapper, HeaderbarCollapse, HeaderItem, Profile, PagenationWrapper, StyledLi, CustomSelect, PageInputArea, StyledLink, Nav, NavIcon,  NavContainer, NavList, Navitemtext, NavItem, NavLink, SubMenu, Icon, HamburgerButton, ArrowIcon, NavFold, NavOpen, NavProfileIcon};
